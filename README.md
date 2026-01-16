@@ -1,0 +1,6 @@
+![Превью](./assets/img/preview/1.jpg)
+![Превью](./assets/img/preview/2.jpg)
+![Превью](./assets/img/preview/3.jpg)
+![Превью](./assets/img/preview/4.jpg)
+![Превью](./assets/img/preview/5.jpg)
+![Превью](./assets/img/preview/6.jpg)

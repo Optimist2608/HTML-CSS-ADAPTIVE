@@ -12,12 +12,11 @@
         padding-top: 63px;
         padding-bottom: 98px;
 
-
         > h1 {
             @extend %title;
             color: $first-letter-color-2;
             text-align: center;
-            margin-bottom:63px ;
+            margin-bottom: 63px;
         }
 
         &_cards {
@@ -104,7 +103,6 @@
     }
 
     &_low {
-        
         height: 310px !important;
         background-color: $green-bg-color;
         margin-left: 0 !important;
@@ -145,4 +143,11 @@
             }
         }
     }
+}
+.slice3_top_card_title {
+    cursor: default;
+}
+
+.slice3_low .cont_low h2 {
+    cursor: default;
 }
