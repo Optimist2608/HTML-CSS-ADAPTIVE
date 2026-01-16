@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signy</title>
+    <link rel="stylesheet" href="./assets/dist/index.min.css" />
+    <link rel="icon" type="image/png" href="./assets/fav/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/fav/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/fav/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/fav/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/fav/site.webmanifest" />
+</head>
+
+<body>
+    <svg display="none">
+        <symbol fill="none" viewBox="0 0 18 2" id="line">
+            <path stroke="#1064e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M16.75.75h-16" />
+        </symbol>
+    </svg>
+    <div class="slice1" id="home">
+        <input type="radio" name="slider" id="slide1" checked hidden />
+        <input type="radio" name="slider" id="slide2" hidden />
+        <input type="radio" name="slider" id="slide3" hidden />
+
+        <div class="slice1_top">
+            <header class="slice1_top_head">
+                <a href="#home" class="slice1_top_head_logo_link">
+                    <picture class="slice1_top_head_logo">
+                        <source srcset="./assets/img/logos/black/logo.avif" type="image/avif" />
+                        <source srcset="./assets/img/logos/black/logo.webp" type="image/webp" />
+                        <img class="slice1_top_head_logo_pic" src="./assets/img/logos/black/logo.png"
+                            alt="logo signy" />
+                    </picture>
+                </a>
+                <div class="slice1_top_head_menu">
+                    <ul class="slice1_top_head_menu_number slice1_menu menu-1">
+                        <li>
+                            <span>0 800 750 643</span>
+                            <ul>
+                                <li>+380 44 334 56 43</li>
+                                <li>+380 44 338 86 43</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="slice1_top_head_menu_about slice1_menu menu-2">
+                        <li>
+                            <span>ПРО НАС</span>
+                            <ul>
+                                <li><a href="#blog">Блог</a></li>
+                                <li><a href="#video">Видео</a></li>
+                                <li><a href="#faq">Вопросы</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 id="price"><a href="#prices">ЦЕНЫ</a></h2>
+                    <h2 id="contants"><a href="#contacts">КОНТАКТЫ</a></h2>
+                </div>
+                <button class="enter wh">ВХОД</button>
+                <button class="register bl">РЕГИСТРАЦИЯ</button>
+                <ul class="slice1_top_head_menu_lang slice1_menu menu-3">
+                    <li>
+                        <span>РУС</span>
+                        <ul>
+                            <li>УКР</li>
+                        </ul>
+                    </li>
+                </ul>
+                <svg id="burger" display="none" fill="none" viewBox="0 0 27 27"><path fill="#1064e5" fill-rule="evenodd" d="M0 1.5C0 .67.67 0 1.5 0h24a1.5 1.5 0 0 1 0 3h-24A1.5 1.5 0 0 1 0 1.5M0 13.5c0-.83.67-1.5 1.5-1.5h24a1.5 1.5 0 0 1 0 3h-24A1.5 1.5 0 0 1 0 13.5M0 25.5c0-.83.67-1.5 1.5-1.5h24a1.5 1.5 0 0 1 0 3h-24A1.5 1.5 0 0 1 0 25.5" clip-rule="evenodd"/></svg>
+            </header>
+
+            <div class="slider">
+                <div class="slide slide_1">
+                    <h1 class="slide_title">Цифровой документооборот в три этапа:</h1>
+                    <div class="slide_numbers">
+                        <p class="slide_active">1</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_not_active">2</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_not_active">3</p>
+                    </div>
+                    <h2 class="slide_description">Быстрая регистрация</h2>
+                    <p class="slide_text">
+                        Мы создали, возможно, самую простую регистрацию. Регистрируйся, получай
+                        полный доступ к сервису и 1000 подписей документов в подарок!
+                    </p>
+                    <button class="slide_button bl">ПОПРОБОВАТЬ БЕСПЛАТНО</button>
+                    <picture class="slide_img">
+                        <source srcset="./assets/img/backgrounds/first/slides/slide1/firstbg.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/slides/slide1/firstbg.webp" type="image/webp" />
+                        <img src="./assets/img/backgrounds/first/slides/slide1/firstbg.png" alt="man" />
+                    </picture>
+                </div>
+
+                <div class="slide slide_2">
+                    <h1 class="slide_title">Цифровой документооборот в три этапа:</h1>
+                    <div class="slide_numbers">
+                        <p class="slide_not_active">1</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_active">2</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_not_active">3</p>
+                    </div>
+                    <h2 class="slide_description">Загрузи документ</h2>
+                    <p class="slide_text">
+                        Загружай в систему любой документ которые надо подписать, договор, акт
+                        выполненных работ, да что угодно
+                    </p>
+                    <button class="slide_button bl">ПОПРОБОВАТЬ БЕСПЛАТНО</button>
+                    <picture class="slide_img">
+                        <source srcset="./assets/img/backgrounds/first/slides/slide2/firstbg.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/slides/slide2/firstbg.webp" type="image/webp" />
+                        <img src="./assets/img/backgrounds/first/slides/slide2/firstbg.png" alt="man" />
+                    </picture>
+                </div>
+
+                <div class="slide slide_3">
+                    <h1 class="slide_title">Цифровой документооборот в три этапа:</h1>
+                    <div class="slide_numbers">
+                        <p class="slide_not_active">1</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_not_active">2</p>
+                        <svg class="line">
+                            <use xlink:href="#line"></use>
+                        </svg>
+                        <p class="slide_active">3</p>
+                    </div>
+                    <h2 class="slide_description">Подпиши и отправь</h2>
+                    <p class="slide_text">
+                        Подписывай своей электронно-цифровой подписью и за долю секунды отправь
+                        партнеру или компании. Он подписывает в ответ и все! Готово!
+                    </p>
+                    <button class="slide_button bl">ПОПРОБОВАТЬ БЕСПЛАТНО</button>
+                    <picture class="slide_img">
+                        <source srcset="./assets/img/backgrounds/first/slides/slide3/firstbg.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/slides/slide3/firstbg.webp" type="image/webp" />
+                        <img src="./assets/img/backgrounds/first/slides/slide3/firstbg.png" alt="man" />
+                    </picture>
+                </div>
+
+                <div class="slider_controls">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="slice1_low">
+            <div class="container_card">
+                <div class="card">
+                    <picture class="slice1_low_card_pic">
+                        <source srcset="./assets/img/backgrounds/first/icons/speed/speed.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/icons/speed/speed.webp" type="image/webp" />
+                        <img class="slice1_low_card_img" src="./assets/img/backgrounds/first/icons/speed/speed.png"
+                            alt="speed" />
+                    </picture>
+                    <div class="slice1_low_card_description">
+                        <h3 class="slice1_low_card_description_title">Моментально</h3>
+                        <p class="slice1_low_card_description_text">
+                            Никаких задержек.
+                            <br />
+                            1 секунда на подписание
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <picture class="slice1_low_card_pic">
+                        <source srcset="./assets/img/backgrounds/first/icons/like/like.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/icons/like/like.webp" type="image/webp" />
+                        <img class="slice1_low_card_img" src="./assets/img/backgrounds/first/icons/like/like.png"
+                            alt="speed" />
+                    </picture>
+                    <div class="slice1_low_card_description">
+                        <h3 class="slice1_low_card_description_title">Глобально</h3>
+                        <p class="slice1_low_card_description_text">
+                            Сервис доступен 24\7
+                            <br />
+                            со всех устройств
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <picture class="slice1_low_card_pic">
+                        <source srcset="./assets/img/backgrounds/first/icons/pig/pig.avif" type="image/avif" />
+                        <source srcset="./assets/img/backgrounds/first/icons/pig/pig.webp" type="image/webp" />
+                        <img class="slice1_low_card_img" src="./assets/img/backgrounds/first/icons/pig/pig.png"
+                            alt="speed" />
+                    </picture>
+                    <div class="slice1_low_card_description">
+                        <h3 class="slice1_low_card_description_title">Экономно</h3>
+                        <p class="slice1_low_card_description_text">
+                            В 30 раз дешевле чем
+                            <br />
+                            почта и курьеры
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slice2">
+        <div class="slice2_top container">
+            <div class="slice2_top_left">
+                <h1>Комфорт в работе</h1>
+                <ul class="slice2_list">
+                    <li>
+                        Создавай документы по твоим личным привычным шаблонам. Это
+                        индивидуально!
+                    </li>
+                    <li>
+                        Настраивай порядок подписание документа, если вас несколько человек. Это
+                        ответственно!
+                    </li>
+                    <li>
+                        Загружай XML файл с собственным шаблоном готового документа. Это удобно!
+                    </li>
+                    <li>
+                        Работай в супер простом и понятном интерфейсе без сложностей. Это
+                        приятно!
+                    </li>
+                </ul>
+                <button class="slice2_top_button wh">УЗНАТЬ БОЛЬШЕ</button>
+            </div>
+            <picture class="slice2_top_right_pic">
+                <source srcset="./assets/img/backgrounds/second/topscreen/top.avif" type="image/avif" />
+                <source srcset="./assets/img/backgrounds/second/topscreen/top.webp" type="image/webp" />
+                <img src="./assets/img/backgrounds/second/topscreen/top.png" alt="screnshot" />
+            </picture>
+        </div>
+        <div class="slice2_low container">
+            <picture>
+                <source srcset="./assets/img/backgrounds/second/lowscreen/low.avif" type="image/avif" />
+                <source srcset="./assets/img/backgrounds/second/lowscreen/low.webp" type="image/webp" />
+                <img src="./assets/img/backgrounds/second/lowscreen/low.png" alt="" />
+            </picture>
+            <div class="slice2_low_right">
+                <h1>Наш продукт это:</h1>
+                <ul class="slice2_list slice2_low_list">
+                    <li>Web версия без установки программного обеспечения</li>
+                    <li>Возможность бесплатно и безлимитно обрабатывать входящие документы</li>
+                    <li>Простота интеграции с 1С и другими сервисами</li>
+                    <li><span>Поддержка входа через Mobile ID</span></li>
+                </ul>
+                <button class="slice2_low_button bl">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            </div>
+        </div>
+    </div>
+    <div class="slice3" id="prices">
+        <div class="slice3_top container">
+            <h1>Пакеты цифровых подписей</h1>
+            <div class="slice3_top_cards">
+                <div class="slice3_top_card">
+                    <h2 class="slice3_top_card_title">Demo</h2>
+                    <p>30 документів</p>
+                    <p class="poket_price">
+                        <span>0</span>
+                        грн/місяць
+                    </p>
+                    <button class="bl">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                </div>
+                <div class="slice3_top_card">
+                    <h2 class="slice3_top_card_title">Business</h2>
+                    <p>1 000 документів</p>
+                    <p class="poket_price">
+                        <span>1 000</span>
+                        грн/рік
+                    </p>
+                    <button class="bl">ЗАКАЗАТЬ</button>
+                </div>
+                <div class="slice3_top_card">
+                    <h2 class="slice3_top_card_title">Pro</h2>
+                    <p>10 000 документів</p>
+                    <p class="poket_price">
+                        <span>9 000</span>
+                        грн/рік
+                    </p>
+                    <button class="bl">ЗАКАЗАТЬ</button>
+                </div>
+                <div class="slice3_top_card">
+                    <h2 class="slice3_top_card_title">Individual</h2>
+                    <p id="individ_p_card">Необмежена кількість документів</p>
+                    <button class="bl">СВЯЗАТЬСЯ С НАМИ</button>
+                </div>
+            </div>
+        </div>
+        <div class="slice3_low">
+            <div class="cont_low">
+                <h1>5 820 125 114</h1>
+                <h2>подписано документов</h2>
+                <p>
+                    Наша компания уже более 30 лет создает удобные решения для бизнеса любого
+                    размера. Мы гордимся Signy как безопасным и комфортным продуктом
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slice4" id="blog">
+        <input type="radio" name="slice4_radio" id="slice4_radio1" checked hidden />
+        <input type="radio" name="slice4_radio" id="slice4_radio2" hidden />
+        <input type="radio" name="slice4_radio" id="slice4_radio3" hidden />
+
+        <div class="slice4_top">
+            <h1>Друзья Signy</h1>
+            <div class="slice4_top_pics">
+                <picture>
+                    <source srcset="./assets/img/backgrounds/fourth/companies/hleb/hleb.avif" type="image/avif" />
+                    <source srcset="./assets/img/backgrounds/fourth/companies/hleb/hleb.webp" type="image/webp" />
+                    <img src="./assets/img/backgrounds/fourth/companies/hleb/hleb.png" alt="hleb" />
+                </picture>
+                <picture>
+                    <source srcset="./assets/img/backgrounds/fourth/companies/nix/nix.avif" type="image/avif" />
+                    <source srcset="./assets/img/backgrounds/fourth/companies/nix/nix.webp" type="image/webp" />
+                    <img src="./assets/img/backgrounds/fourth/companies/nix/nix.png" alt="nix" />
+                </picture>
+                <picture>
+                    <source srcset="
+                                ./assets/img/backgrounds/fourth/companies/nashaposhta/nashaposhta.avif
+                            " type="image/avif" />
+                    <source srcset="
+                                ./assets/img/backgrounds/fourth/companies/nashaposhta/nashaposhta.webp
+                            " type="image/webp" />
+                    <img src="./assets/img/backgrounds/fourth/companies/nashaposhta/nashaposhta.png"
+                        alt="nashaposhta" />
+                </picture>
+
+                <picture>
+                    <source srcset="
+                                ./assets/img/backgrounds/fourth/companies/ukroboron/ukroboron.avif
+                            " type="image/avif" />
+                    <source srcset="
+                                ./assets/img/backgrounds/fourth/companies/ukroboron/ukroboron.webp
+                            " type="image/webp" />
+                    <img src="./assets/img/backgrounds/fourth/companies/ukroboron/ukroboron.png" alt="ukroboron" />
+                </picture>
+            </div>
+            <div class="slice4_controls">
+                <label for="slice4_radio1"></label>
+                <label for="slice4_radio2"></label>
+                <label for="slice4_radio3"></label>
+            </div>
+        </div>
+        <div class="slice4_low">
+            <h1>Интересно пишем про</h1>
+            <div class="slice4_low_cards">
+                <div class="slice4_low_cards_card">
+                    <picture>
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/fisrt/note1.avif
+                                " type="image/avif" />
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/fisrt/note1.webp
+                                " type="image/webp" />
+                        <img src="./assets/img/backgrounds/fourth/interesting/fisrt/note1.png" alt="note" />
+                    </picture>
+                    <div class="slide4_low_cards_card_text_content">
+                        <p class="slice4_low_cards_card_text_content_date">28.05.2020</p>
+                        <p class="slice4_low_cards_card_text_content_text">
+                            Заголовок короткий в
+                            <br />
+                            две строки
+                        </p>
+                    </div>
+                </div>
+                <div class="slice4_low_cards_card">
+                    <picture>
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/second/books2.avif
+                                " type="image/avif" />
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/second/books2.webp
+                                " type="image/webp" />
+                        <img src="./assets/img/backgrounds/fourth/interesting/second/books2.png" alt="books" />
+                    </picture>
+                    <div class="slide4_low_cards_card_text_content">
+                        <p class="slice4_low_cards_card_text_content_date">28.05.2020</p>
+                        <p class="slice4_low_cards_card_text_content_text">
+                            Заголовок короткий в
+                            <br />
+                            две строки
+                        </p>
+                    </div>
+                </div>
+                <div class="slice4_low_cards_card slice4_low_cards_card3">
+                    <picture>
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/third/note3.avif
+                                " type="image/avif" />
+                        <source srcset="
+                                    ./assets/img/backgrounds/fourth/interesting/third/note3.webp
+                                " type="image/webp" />
+                        <img src="./assets/img/backgrounds/fourth/interesting/third/note3.png" alt="note" />
+                    </picture>
+                    <div class="slide4_low_cards_card_text_content">
+                        <p class="slice4_low_cards_card_text_content_date"
+                            id="problem_slice4_low_cards_card_text_content_date">
+                            28.05.2020
+                        </p>
+                        <p class="slice4_low_cards_card_text_content_text"
+                            id="problem_slice4_low_cards_card_text_content_text">
+                            Заголовок короткий в
+                            <br />
+                            две строки
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slice5" id="video">
+        <h1>Познакомимся в живую?</h1>
+        <video class="slice5-video" autoplay muted loop playsinline controls preload="metadata">
+            <source src="./assets/img/backgrounds//fifth/video/desctop/video-desctop.mp4" type="video/mp4" />
+            <source src="./assets/img/backgrounds//fifth/video/desctop/video-desctop" type="video/webm" />
+        </video>
+    </div>
+    <div class="slice6" id="faq">
+        <h1>Популярные вопросы и ответы на них</h1>
+        <div class="slice6_details">
+            <details>
+                <summary>
+                    Почему круглую пиццу ставят в квадратную коробку, а нарезают треугольниками?
+                </summary>
+                <p>
+                    - Круглая пицца помещается в квадратную коробку, а треугольные кусочки
+                    режут, чтобы обеспечить равномерное распределение начинки и сделать еду
+                    более удобной для ежедневного потребления. Квадратная коробка проще и
+                    дешевле производить, а также позволяет пицце "дышать" и сохранять свежесть
+                    на время доставки. Треугольные кусочки также удобнее есть, и режут их, чтобы
+                    количество начинки было равномерным, и никому не попался уголок пиццы, где с
+                    обеих сторон идет просто бортик.
+                </p>
+            </details>
+            <details>
+                <summary>Почему после ремонта дорога опять проваливается?</summary>
+                <p>- Потому что делают ее без соблюдения технологических процессов.</p>
+            </details>
+            <details>
+                <summary>Почему вода мокрая?</summary>
+                <p>
+                    - Вода считается мокрой, потому что она обладает свойствами, которые
+                    позволяют ей взаимодействовать с поверхностями и создавать ощущение влаги.
+                </p>
+            </details>
+            <details>
+                <summary>Видят ли микробы друг друга?</summary>
+                <p>
+                    - Микробы не видят друг друга. Это связано с тем, что для того, чтобы
+                    видеть, требуется зрение, которое требует нервной системы, а у микробов она
+                    отсутствует. Если бы у них были глаза, они не смогли бы видеть своих
+                    собратьев, так как глаза имеют минимальный размер, который больше, чем
+                    размер крупного микроба.
+                </p>
+            </details>
+            <details>
+                <summary>Почему кровь красная а вены синие?</summary>
+                <p>
+                    - Цвет крови зависит от содержания гемоглобина, белка, который
+                    транспортирует кислород. Кровь в артериях, где содержится много кислорода,
+                    имеет ярко-красный цвет, а в венах, где кислорода меньше, она темно-красная,
+                    даже бордовая. Вены кажутся синими не из-за цвета крови, а из-за того, как
+                    свет взаимодействует с кожей и тканями. Красные лучи проникают глубже и
+                    поглощаются, а коротковолновые синие отражаются сильнее. Это оптическая
+                    иллюзия, не связана с биологией крови.
+                </p>
+            </details>
+            <details>
+                <summary>Из чего сделана радуга?</summary>
+                <p>
+                    - Радуга образуется из-за преломления и отражения света в водяных каплях.
+                    Солнечный свет попадает на множество мелких капель воды, и при этом свет
+                    разлагается на составляющие, которые затем собираются в виде разноцветной
+                    дуги. Цветы в радуге включают красный, оранжевый, желтый, зеленый, голубой,
+                    синий и фиолетовый, которые образуются в результате преломления света в
+                    каплях.
+                </p>
+            </details>
+        </div>
+    </div>
+    <div class="slice7" id="contacts">
+        <div class="slice7_top">
+            <h1>Подпишись на наши новости!</h1>
+            <p>Введи свой электронный адрес и будь в курсе всех обновлений</p>
+            <form class="slice7_top_form">
+                <input type="email" name="email" id="email" placeholder="" />
+                <button type="submit" class="bl">ОТПРАВИТЬ</button>
+            </form>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer__container container">
+                <div class="footer__top">
+                    <div class="footer__col">
+                        <div class="footer__logo">
+                            <picture>
+                                <source srcset="./assets/img/logos/white/logo.avif" type="image/avif" />
+                                <source srcset="./assets/img/logos/white/logo.webp" type="image/webp" />
+                                <img src="./assets/img/logos/white/logo.png" alt="signy logo" />
+                            </picture>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-item">
+                                <a href="#about" class="footer__list-link">Про нас</a>
+                                <a href="#price" class="footer__list-link">Цены</a>
+
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#blog" class="footer__list-link" >Блог</a>
+                                <a href="#contacts" class="footer__list-link" >Контакты</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#home" class="footer__list-link">Вход</a>
+                                <a href="#home" class="footer__list-link">Регистрация</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__col footer__col-right">
+                        <div class="footer__contacts">
+                            <a href="mailto:infosmartsign@smarttender.biz">infosmartsign@smarttender.biz</a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                Facebook
+                            </a>
+                        </div>
+                        <div class="footer__info">
+                            <address class="footer__info-item">
+                                пр-т Миколи Бажана, 14 А
+                                <br />
+                                Київ, 02072
+                            </address>
+                            <a href="#" class="footer__info-item">0 800 750643</a>
+                            <a href="#" class="footer__info-item">+380 44 334 56 43</a>
+                            <a href="#" class="footer__info-item">+380 44 338 86 43</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" id="up"><svg fill="none" viewBox="0 0 52 60"><rect width="59" height="51" x="51.5" y=".5" stroke="#fff" rx="25.5" transform="rotate(90 51.5 .5)"/><path stroke="#fff" d="M26 48V15M26 15l-6.5 6.5M26 15l6.5 6.5"/></svg></a>
+                <div class="footer__copyright">
+                    <div> <p class="copyright-text">© 2020 Signy</p></div>
+                    <div>
+                        <a href="#" class="copyright-text">Договір оферти</a>
+                        <a href="#" class="copyright-text">Безпека сервісу</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

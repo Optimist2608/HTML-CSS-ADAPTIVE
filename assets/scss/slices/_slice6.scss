@@ -1,0 +1,91 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+
+.slice6 {
+    background-color: $blue-bg-color;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-top: 26px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 45px;
+    align-items: center;
+
+    > h1 {
+        @extend %title;
+        line-height: 48px;
+        letter-spacing: 0;
+        color: $first-letter-color-1;
+        text-align: center;
+    }
+
+    &_details {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin: 0 auto;
+        width: 527px;
+
+        > details {
+            width: 100%;
+            padding: 0;
+            padding-left: 6px;
+            overflow: hidden;
+
+            &[open] {
+                > summary {
+                    margin-bottom: 6px;
+                    font-weight: 500;
+                    &::before {
+                        content: url('../img/backgrounds/sixed/-.png');
+                        top: 7px;
+                    }
+                }
+            }
+
+            > summary {
+                list-style: none;
+                cursor: pointer;
+                position: relative;
+                padding-left: 24px;
+                margin: 0;
+                text-indent: 0;
+                display: block;
+                font-weight: 400;
+                font-size: 1.125rem;
+                line-height: 22px;
+                color: $first-letter-color-1;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &::before {
+                    content: url('../img/backgrounds/sixed/+.png');
+                    position: absolute;
+                    left: -6px;
+                    top: 12px;
+                    transform: translateY(-50%);
+                    color: $blue-color;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            > p {
+                padding: 0 24px;
+                margin-top: 0;
+                font-weight: 400;
+                font-size: 1.125rem;
+                line-height: 22px;
+                color: $first-letter-color-1;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+
+.slice3 {
+    background-color: $white;
+    padding: 57px 0;
+    padding-bottom: 0px;
+
+    &_top {
+        padding-top: 63px;
+        padding-bottom: 98px;
+
+
+        > h1 {
+            @extend %title;
+            color: $first-letter-color-2;
+            text-align: center;
+            margin-bottom:63px ;
+        }
+
+        &_cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 32px;
+
+            .slice3_top_card {
+                width: 256px;
+                height: 320px;
+                padding-left: 32px;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                background-color: $blue-bg-color;
+
+                .slice3_top_card_title {
+                    font-weight: 500;
+                    font-size: 1.75rem;
+                    letter-spacing: 0;
+                    line-height: 40px;
+                    color: $first-letter-color-1;
+                    margin-bottom: 44px;
+                    text-transform: none;
+                }
+
+                > p {
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 24px;
+                    color: $first-letter-color-1;
+                    margin-bottom: 12px;
+                }
+
+                .poket_price {
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    color: $first-letter-color-1;
+                    line-height: 24px;
+                    margin-bottom: 50px;
+
+                    > span {
+                        font-weight: 700;
+                        font-size: 3rem;
+                        line-height: 48px;
+                    }
+                }
+
+                button {
+                    background-color: $blue-color;
+                    border: 0px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.03em;
+                    border-radius: 100px;
+                    max-width: 192px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    align-self: center;
+                    font-size: 0.75rem;
+                    color: $third-button-letter-color-1;
+                }
+
+                &:nth-child(1) button {
+                    padding: 10px 20px;
+                }
+                &:nth-child(2) button {
+                    padding: 10px 62px;
+                }
+                &:nth-child(3) button {
+                    padding: 10px 62px;
+                }
+                &:nth-child(4) button {
+                    padding: 10px 30px;
+                    position: relative;
+                    top: 2px;
+                    left: 3px;
+                }
+
+                #individ_p_card {
+                    margin-bottom: 84px;
+                }
+            }
+        }
+    }
+
+    &_low {
+        
+        height: 310px !important;
+        background-color: $green-bg-color;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        .cont_low {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            padding: 43px 20px;
+            width: 100%;
+            position: relative !important;
+
+            h1 {
+                font-weight: 500;
+                font-size: 4.5625rem;
+                line-height: 48px;
+                text-align: center;
+            }
+
+            h2 {
+                @extend %title;
+                line-height: 48px;
+                text-align: center;
+                font-size: 2.5rem;
+                letter-spacing: 0;
+                text-transform: lowercase;
+            }
+
+            p {
+                font-size: 1.125rem;
+                line-height: 28px;
+                font-weight: 400;
+                text-align: center;
+                max-width: 478px;
+            }
+        }
+    }
+}

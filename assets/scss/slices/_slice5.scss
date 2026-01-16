@@ -1,0 +1,33 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+
+.slice5 {
+    background-color: $white;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-top: 49px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin-bottom: 64px;
+
+    > h1 {
+        @extend %title;
+        line-height: 48px;
+        letter-spacing: 0;
+        color: $first-letter-color-2;
+        text-align: center;
+    }
+
+    .slice5-video {
+        width: 734px;
+        height: 451px;
+        object-fit: fill;
+        align-self: center;
+        border: 0;
+        border-radius: 4px;
+    }
+}

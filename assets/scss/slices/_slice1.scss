@@ -1,0 +1,576 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+@use '../hover' as *;
+
+// ========================================= PLACEHOLDERS =================================
+
+%slide-active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    pointer-events: all;
+}
+
+%slide-text-base {
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.04em;
+}
+
+// ========================================= SVG ==========================================
+
+.line {
+    width: 16px;
+    height: 2px;
+    align-self: center;
+}
+
+#burger {
+    @media (max-width: 1100px) {
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+    }
+}
+// =========================================== CODE =======================================
+
+.slice1 {
+    background-color: $blue-bg-color;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 39px;
+    z-index: -10;
+    width: 100vw;
+    max-width: 100%;
+
+    &_top {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        @media (max-width: 1440px) {
+            margin: 0 clamp(3.125rem, -0.7321rem + 8.0357vw, 6.5rem) 0
+                clamp(3.125rem, -0.7321rem + 8.0357vw, 6.5rem) !important;
+        }
+        @media (max-width: 700px) {
+            margin: 0 20px;
+        }
+
+        &_head {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            @media (max-width: 1100px) {
+                justify-content: space-between;
+            }
+
+            &_logo {
+                width: 130px;
+                height: 40px;
+                flex-shrink: 0;
+                display: inline-block;
+
+                &_pic {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            &_menu {
+                @extend %menu-text-base;
+                margin-left: clamp(3.125rem, -6.3596rem + 17.2896vw, 11.424rem);
+                display: flex;
+                align-items: center;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+            }
+
+            .menu-1 {
+                margin-right: clamp(1.625rem, -0.2321rem + 3.3854vw, 3.25rem);
+            }
+            .menu-2 {
+                margin-right: clamp(1.5rem, -0.2143rem + 3.125vw, 3rem);
+            }
+
+            h2 {
+                @extend %menu-text-base;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+
+            #price {
+                margin-right: clamp(1.125rem, -0.1607rem + 2.3437vw, 2.25rem);
+            }
+
+            .enter {
+                @extend %button-base;
+                color: $first-letter-color-1;
+                border: 1.5px solid $blue-color;
+                background-color: transparent;
+                margin-right: clamp(0.75rem, -0.1071rem + 1.5625vw, 1.5rem);
+                margin-left: clamp(1rem, -0.1429rem + 2.0833vw, 2rem);
+                padding: 8px 29px;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+            }
+
+            .menu-3 {
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+            }
+
+            .register {
+                @extend %button-base;
+                margin-right: clamp(0.781rem, -0.1127rem + 1.6292vw, 1.563rem);
+                color: $white;
+                border: 0;
+                background-color: $blue-color;
+                padding: 8px 30px;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &_menu {
+        list-style: none;
+        position: relative;
+        font-weight: 500;
+
+        > li {
+            position: relative;
+
+            > span {
+                @extend %menu-text-base;
+                cursor: pointer;
+                display: inline-block;
+
+                &::after {
+                    content: url('../img/backgrounds/first/icons/arrow/arrow.png');
+                    display: inline-block;
+                    width: 8px;
+                    height: 4px;
+                    margin-left: 6px;
+                    transition: transform 0.1ms ease;
+                    position: absolute;
+                }
+            }
+
+            > ul {
+                @extend %menu-text-base;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.1ms ease, visibility 0.1ms ease;
+                cursor: pointer;
+            }
+
+            &:hover {
+                > span::after {
+                    transform: rotate(180deg) translate(3px, -14px);
+                }
+
+                > ul {
+                    opacity: 1;
+                    visibility: visible;
+
+                    > li {
+                        @extend %menu-text-base;
+                        margin-top: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    // ===================================================== SLIDER CONTROLS =========================================
+
+    .slider_controls {
+        display: flex;
+        gap: 25px;
+        margin-top: 97px;
+        margin-left: 50%;
+        margin-bottom: 29px;
+        justify-content: flex-start;
+        @media (max-width: 629px) {
+                margin-left: 50%;
+            }
+
+        label {
+            width: 10px;
+            height: 10px;
+            border: 2px solid $blue-color;
+            border-radius: 50%;
+            cursor: pointer;
+            display: block;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    // ===================================================== SLIDER LOGIC ========================================
+
+    .slider {
+        margin-top: 115px;
+        position: relative;
+        flex: 1;
+
+        .slide {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            pointer-events: none;
+        }
+
+        .slide_title {
+            width: clamp(21.5rem, 4.2143rem + 36.0119vw, 36.625rem);
+            margin-bottom: 14px;
+            @extend %title;
+            color: $first-letter-color-1;
+            @media (max-width: 629px) {
+                font-size: 1.5rem;
+                letter-spacing: 0;
+                line-height: 26px;
+            }
+        }
+
+        .slide_numbers {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 14px;
+
+            .slide_active,
+            .slide_not_active {
+                @extend %slide-text-base;
+            }
+
+            .slide_active {
+                color: $first-letter-color-1;
+                font-size: 1.5rem;
+                @media (max-width: 629px) {
+                    font-size: 1.125rem;
+                    letter-spacing: 0.04em;
+                    line-height: 130%;
+                }
+            }
+
+            .slide_not_active {
+                color: $grey-color;
+                font-size: 1.125rem;
+                @media (max-width: 629px) {
+                    font-size: 0.875rem;
+                    letter-spacing: 0.04em;
+                    line-height: 130%;
+                }
+            }
+        }
+
+        .slide_description {
+            @extend %slide-text-base;
+            margin-top: 14px;
+            font-size: 1.5rem;
+            color: $first-letter-color-1;
+            letter-spacing: normal;
+            text-transform: none;
+        }
+
+        .slide_text {
+            width: clamp(20.25rem, 10.9643rem + 19.3452vw, 28.375rem);
+            margin-top: 14px;
+            margin-bottom: 31px;
+            font-weight: 400;
+            line-height: 130%;
+            color: $first-letter-color-1;
+            letter-spacing: 0.04em;
+        }
+
+        .slide_button {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $white;
+            border-radius: 45px;
+            border: 0;
+            line-height: 130%;
+            padding: 17px 26px;
+            background-color: $blue-color;
+            letter-spacing: 0.04em;
+            font-size: 1rem;
+        }
+
+        .slide_img {
+            position: absolute;
+            z-index: -1;
+            top: -200px;
+            left: 100px;
+            @media (max-width: 1150px) {
+                left: -100px;
+            }
+            @media (max-width: 950px) {
+                left: -200px;
+            }
+            @media (max-width: 768px) {
+                left: -300px;
+                transform: scale(0.9);
+            }
+            @media (max-width: 668px) {
+                left: -400px;
+            }
+            @media (max-width: 568px) {
+                left: -450px;
+            }
+            @media (max-width: 458px) {
+                left: -550px;
+            }
+        }
+    }
+
+    // ===================================================== SLIDER SWITCHING LOGIC =========================================
+
+    @for $i from 1 through 3 {
+        #slide#{$i}:checked ~ .slice1_top .slider .slide_#{$i} {
+            @extend %slide-active;
+        }
+
+        #slide#{$i}:checked ~ .slice1_top .slider_controls label:nth-child(#{$i}) {
+            background-color: $blue-color;
+        }
+    }
+}
+
+// ======================================================= UNDER ===================================================================
+
+.slice1_low {
+    background-color: $white;
+    padding-top: 54px !important;
+    padding-bottom: 38.5px;
+
+    .container_card {
+        display: flex;
+        gap: 54px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        display: flex;
+        gap: 20px;
+        width: 306px;
+
+        .slice1_low_card_pic {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            margin-top: 10px;
+
+            > img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+
+        .slice1_low_card_description {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &_title {
+                font-weight: 500;
+                font-size: 1.5rem;
+                line-height: 65px;
+                color: $first-letter-color-2;
+            }
+
+            &_text {
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 130%;
+                letter-spacing: 0.04em;
+                color: $first-letter-color-2;
+            }
+        }
+    }
+}
+
+// ===================================================== HOVER / ACTIVE =============================================
+
+h2 {
+    @extend %menu-text-base;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $blue-color;
+            border-radius: 7px;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::before {
+            width: 50%;
+        }
+    }
+
+    &.menu-link.active a::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 43px;
+        height: 2px;
+        background-color: $blue-color;
+        border-radius: 7px;
+    }
+
+    &.menu-link.active a:hover::before {
+        width: 0;
+    }
+}
+
+.slice1_menu {
+    list-style: none;
+    position: relative;
+    font-weight: 500;
+
+    > li {
+        position: relative;
+
+        > span {
+            @extend %menu-text-base;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -6px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $blue-color;
+                border-radius: 7px;
+                transition: width 0.3s ease;
+                z-index: 1;
+            }
+
+            &:hover::before {
+                width: 50%;
+            }
+
+            &::after {
+                content: url('../img/backgrounds/first/icons/arrow/arrow.png');
+                display: inline-block;
+                width: 8px;
+                height: 4px;
+                margin-left: 6px;
+                transition: transform 0.1ms ease;
+                position: absolute;
+            }
+        }
+
+        > ul {
+            @extend %menu-text-base;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.1ms ease, visibility 0.1ms ease;
+            cursor: pointer;
+
+            > li {
+                @extend %menu-text-base;
+                margin-top: 5px;
+                cursor: pointer;
+                position: relative;
+                color: $first-letter-color-1;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -6px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $blue-color;
+                    border-radius: 7px;
+                    transition: width 0.3s ease;
+                }
+
+                &:hover::before {
+                    width: 50%;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    position: relative;
+                    display: inline-block;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -6px;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: $blue-color;
+                        border-radius: 7px;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::before {
+                        width: 50%;
+                    }
+                }
+
+                &:has(a):hover::before {
+                    width: 0;
+                }
+            }
+        }
+
+        &:hover {
+            > span::after {
+                transform: rotate(180deg) translate(3px, -14px);
+            }
+
+            > ul {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

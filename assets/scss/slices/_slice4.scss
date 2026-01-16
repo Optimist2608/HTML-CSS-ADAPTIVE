@@ -1,0 +1,156 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+
+.slice4 {
+    background-color: $white;
+    width: 100vw;
+    padding-top: 47px;
+    z-index: 1;
+
+    &_top {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+
+        gap: 46px;
+        padding-bottom: 58px;
+        height: 300px;
+
+        > h1 {
+            @extend %title;
+            line-height: 48px;
+            letter-spacing: 0;
+            color: $first-letter-color-2;
+            text-align: center;
+        }
+
+        &_pics {
+            display: flex;
+            justify-content: center;
+            gap: clamp(0rem, -7.4286rem + 15.4762vw, 6.5rem);
+            flex-direction: row-reverse;
+            @media (max-width: 1000px) {
+                flex-wrap: wrap;
+            }
+
+            > picture {
+                width: 176px;
+                height: 106px;
+
+                > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &_low {
+        width: 100vw;
+        background-color: $green-bg-color;
+        padding-top: 38px;
+        padding-bottom: 53px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        z-index: 1;
+
+        > h1 {
+            @extend %title;
+            line-height: 48px;
+            letter-spacing: 0;
+            color: $first-letter-color-2;
+            text-align: center;
+        }
+
+        &_cards {
+            width: 100%;
+            max-width: 1033px;
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.688rem, -0.24rem + 4.0167vw, 3.375rem);
+            @media (max-width: 1250px) {
+                flex-direction: column;
+            }
+            @media (max-width: 768px) {
+                gap: 45px;
+                flex-direction: row;
+                .slice4_low_cards_card3 {
+                    display: none;
+                }
+            }
+
+            &_card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+                flex-wrap: wrap;
+
+                > picture {
+                    width: clamp(20.25rem, 16.6786rem + 7.4405vw, 23.375rem);
+                    height: 395px;
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                &_text_content {
+                    width: 100%;
+
+                    &_data {
+                        font-weight: 500;
+                        font-size: 0.875rem;
+                        line-height: 24px;
+                        color: $second-letter-color-1;
+                    }
+
+                    &_text {
+                        font-weight: 500;
+                        font-size: 1.5rem;
+                        line-height: 26.5px;
+                        color: $second-letter-color-1;
+                    }
+                }
+            }
+        }
+    }
+}
+// ===================================================== RADIO CONTROLS =========================================
+
+.slice4_controls {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+    label {
+        width: 10px;
+        height: 10px;
+        border: 2px solid $blue-color;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+// ===================================================== RADIO SWITCHING VISUAL =========================================
+
+@for $i from 1 through 3 {
+    #slice4_radio#{$i}:checked ~ .slice4_top .slice4_controls label:nth-child(#{$i}) {
+        background-color: $blue-color;
+    }
+}

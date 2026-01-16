@@ -1,0 +1,21 @@
+
+@use 'variable' as *;
+
+
+.wh {
+    transition: all 300ms ease !important;
+    &:hover {
+        background-color: $blue-color !important;
+        color: $white !important;
+    }
+}
+
+
+.bl {
+    transition: all 300ms ease !important;
+    &:hover {
+        background-color: transparent !important;
+        color: $blue-color !important;
+        outline: 1.5px solid $blue-color !important;
+    }
+}

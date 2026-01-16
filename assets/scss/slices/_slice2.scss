@@ -1,0 +1,95 @@
+@use '../variable' as *;
+@use '../fonts' as *;
+@use '../defaults' as *;
+@use '../mixin' as *;
+
+.slice2 {
+    background-color: $green-bg-color;
+    padding: 57px clamp(1.5rem, -0.2606rem + 7.5117vw, 6.5rem) ;
+    padding-bottom: 92px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 57px;
+
+    &_top {
+        display: flex;
+        gap: 135px;
+        &_left {
+            width: 530px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 18px;
+            > h1 {
+                @extend %title;
+                color: $second-letter-color-1;
+                line-height: 48px;
+            }
+            ul {
+                @extend %list;
+            }
+        }
+        &_button {
+            @extend %button-base;
+            background-color: transparent;
+            border: 1.5px solid $blue-color;
+            padding: 16px 42px;
+            letter-spacing: 0px;
+            border-radius: 46px;
+            max-width: 217px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+    }
+    &_low {
+        display: flex;
+        gap: 135px;
+        position: relative;
+        > picture {
+            @media (max-width:700px) {
+            position: relative;
+            left: -80%;
+        }
+        }
+        
+        ul {
+            @extend %list;
+            color: $second-letter-color-2;
+        }
+        span {
+            color: $second-letter-color-3;
+        }
+        &_right {
+            width: 530px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 18px;
+            position: relative;
+            @media (max-width:700px) {
+            position: relative;
+            left: -80%;
+        }
+            > h1 {
+                @extend %title;
+                color: $second-letter-color-1;
+                line-height: 48px;
+            }
+        }
+
+        &_button {
+            @extend %button-base;
+            background-color: $blue-color;
+            border: 0px;
+            padding: 17px 25px;
+            letter-spacing: 0px;
+            border-radius: 50px;
+            max-width: 217px;
+            font-weight: 700;
+            line-height: 24px;
+            font-size: 0.875rem;
+            color: $white;
+        }
+    }
+}
